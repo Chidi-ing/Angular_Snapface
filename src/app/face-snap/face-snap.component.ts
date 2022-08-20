@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {FaceSnap} from "../models/face-snap.model";
+import {FaceSnapsService} from "../services/face-snaps.service";
 
 @Component({
   selector: 'app-face-snap',
@@ -7,9 +8,10 @@ import {FaceSnap} from "../models/face-snap.model";
   styleUrls: ['./face-snap.component.css']
 })
 export class FaceSnapComponent implements OnInit {
-  @Input() faceSnap!: FaceSnap;
-
+  @Input() faceSnap!: FaceSnap; //property allowing to inject the component from the outside
   buttonText!: string;
+
+  constructor(private faceSnapService : FaceSnapsService) {}
 
   ngOnInit() {
    this.buttonText ='Like';
@@ -17,10 +19,10 @@ export class FaceSnapComponent implements OnInit {
 
   onSnap(){
     if(this.buttonText === 'Like'){
-      this.faceSnap.snaps++;
+      this.faceSnapService.snapFaceSnapById(this.faceSnap.id,'snap');
       this.buttonText = 'Liked';
     } else {
-      this.faceSnap.snaps--;
+      this.faceSnapService.snapFaceSnapById(this.faceSnap.id,'unsnap');
       this.buttonText = 'Like';
 
     }
