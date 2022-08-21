@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {FaceSnap} from "../models/face-snap.model";
 import {FaceSnapsService} from "../services/face-snaps.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-face-snap',
@@ -11,7 +12,8 @@ export class FaceSnapComponent implements OnInit {
   @Input() faceSnap!: FaceSnap; //property allowing to inject the component from the outside
   buttonText!: string;
 
-  constructor(private faceSnapService : FaceSnapsService) {}
+  constructor(private faceSnapService : FaceSnapsService,
+              private router: Router) {}
 
   ngOnInit() {
    this.buttonText ='Like';
@@ -28,4 +30,7 @@ export class FaceSnapComponent implements OnInit {
     }
   }
 
+  onViewFaceSnap() {
+    this.router.navigateByUrl(`facesnaps/${this.faceSnap.id}`);
+  }
 }
