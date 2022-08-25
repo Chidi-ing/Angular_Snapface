@@ -6,7 +6,7 @@ import {ActivatedRoute} from "@angular/router";
 @Component({
   selector: 'app-single-face-snap',
   templateUrl: './single-face-snap.component.html',
-  styleUrls: ['./single-face-snap.component.css']
+  styleUrls: ['./single-face-snap.component.scss']
 })
 export class SingleFaceSnapComponent implements OnInit {
   faceSnap!: FaceSnap;

@@ -6,7 +6,7 @@ import {Router} from "@angular/router";
 @Component({
   selector: 'app-face-snap',
   templateUrl: './face-snap.component.html',
-  styleUrls: ['./face-snap.component.css']
+  styleUrls: ['./face-snap.component.scss']
 })
 export class FaceSnapComponent implements OnInit {
   @Input() faceSnap!: FaceSnap; //property allowing to inject the component from the outside

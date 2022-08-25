@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import {AppRoutingModule} from "./app-routing.module";
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { SingleFaceSnapComponent } from './single-face-snap/single-face-snap.component';
+//import { TestComponent } from './test/test.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { SingleFaceSnapComponent } from './single-face-snap/single-face-snap.com
     HeaderComponent,
     LandingPageComponent,
     SingleFaceSnapComponent,
+//    TestComponent,
   ],
   imports: [
     BrowserModule,
